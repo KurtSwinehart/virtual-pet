@@ -18,14 +18,11 @@ public class VirtualPetApp {
 		System.out.println(" ");
 		System.out.println("What would you like to do with " + petName + "?");
 
-		while (!menuOption.equals("0")) {
-			menuOptions();
-			menuOption = input.nextLine();
+		menuOptions();
 
-			if (menuOption.equals("0")) {
-				System.out.println("Goodbye...take great care of " + petName + "!");
-				System.exit(0);
-			} else if (menuOption.equals("1")) {
+		while (!menuOption.equals("0")) {
+
+			if (menuOption.equals("1")) {
 				System.out.println("Enter the amount you would like to feed " + petName);
 				int foodAmount = input.nextInt();
 				myVirtualPet.giveFood(foodAmount);
@@ -40,10 +37,8 @@ public class VirtualPetApp {
 				input.nextLine();
 			} else if (menuOption.equals("3")) {
 				System.out.println("Don't forget to take a bag to pick up " + petName + "'s waste");
-				int wasteAmount = 30;
-				myVirtualPet.takeOutside(wasteAmount);
+				myVirtualPet.takeOutside();
 				System.out.println("What else would you like to do with " + petName + "?");
-				input.nextLine();
 			} else if (menuOption.equals("4")) {
 				System.out.println("How long would you like to play with " + petName + "?");
 				int playAmount = input.nextInt();
@@ -68,8 +63,11 @@ public class VirtualPetApp {
 			} else if (menuOption.equals("8")) {
 				System.out.println(menuOption);
 			}
+			myVirtualPet.tick();
 			menuOptions();
 		}
+		System.out.println("Goodbye...take great care of " + petName + "!");
+		System.exit(0);
 	}
 
 	static void menuOptions() {

@@ -31,10 +31,10 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldDecreaseWasteFrom90To30ByTakingOutside() {
-		underTest.takeOutside(60);
+	public void shouldDecreaseWasteFrom90To0ByTakingOutside() {
+		underTest.takeOutside();
 		int check = underTest.getWasteLevel();
-		assertThat(check, is(30));
+		assertThat(check, is(0));
 	}
 
 	@Test
@@ -89,7 +89,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldDecreaseBoredomBy20WhenTakeOutside() {
-		underTest.takeOutside(60);
+		underTest.takeOutside();
 		int check = underTest.getBoredomLevel();
 		assertThat(check, is(70));
 	}

@@ -55,8 +55,8 @@ public class VirtualPet {
 		wasteLevel += waterAmount;
 	}
 
-	public void takeOutside(int wasteAmount) {
-		wasteLevel -= wasteAmount;
+	public void takeOutside() {
+		wasteLevel -= wasteLevel;
 		hungerLevel += 30;
 		boredomLevel -= 20;
 		sleepinessLevel += 20;
