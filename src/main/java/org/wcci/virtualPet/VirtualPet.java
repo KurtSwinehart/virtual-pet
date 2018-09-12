@@ -67,14 +67,14 @@ public class VirtualPet {
 		sleepinessLevel += 30;
 	}
 
-	public void takeToDoctor(int medicalCareProvided) {
-		sicknessLevel -= medicalCareProvided;
+	public void takeToDoctor() {
+		sicknessLevel -= sicknessLevel;
 		boredomLevel += 30;
 		hungerLevel += 20;
 	}
 
-	public void takeNap(int lengthOfNap) {
-		sleepinessLevel -= lengthOfNap;
+	public void takeNap() {
+		sleepinessLevel -= sleepinessLevel;
 		boredomLevel -= 30;
 	}
 

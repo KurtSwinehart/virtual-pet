@@ -45,17 +45,17 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldDecreaseSicknessFrom70To10ByTakingToDoctor() {
-		underTest.takeToDoctor(60);
+	public void shouldDecreaseSicknessFrom70To0ByTakingToDoctor() {
+		underTest.takeToDoctor();
 		int check = underTest.getSicknessLevel();
-		assertThat(check, is(10));
+		assertThat(check, is(0));
 	}
 
 	@Test
 	public void shouldDecreaseSleepinessFrom80To20ByNapping() {
-		underTest.takeNap(60);
+		underTest.takeNap();
 		int check = underTest.getSleepinessLevel();
-		assertThat(check, is(20));
+		assertThat(check, is(0));
 	}
 
 	@Test
